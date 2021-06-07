@@ -1,19 +1,21 @@
 {
   "name": "qsmxt-gui",
   "build": {
-		"appId": "com.qsmxt.gui",
-		"productName": "QSMxT App",
-		"mac": {
-			"category": "public.app-category.medical"
-		},
-		"dmg": {
-			"icon": false
-		},
-		"linux": {
-			"target": ["AppImage"],
-			"category": "Science"
-		}
-	},
+    "appId": "com.qsmxt.gui",
+    "productName": "QSMxT App",
+    "mac": {
+      "category": "public.app-category.medical"
+    },
+    "dmg": {
+      "icon": false
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Science"
+    }
+  },
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
@@ -21,9 +23,12 @@
     "dist": "electron-builder",
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "electron-builder install-app-deps",
+    "build": "electron-builder --mac --windows --linux",
+    "release": "electron-builder --mac --windows --linux --publish always"
   },
   "dependencies": {
+    "electron-updater": "^4.3.9",
     "source-map-support": "^0.5.16"
   },
   "devDependencies": {
